@@ -21,7 +21,7 @@ function DetailsPage() {
 		const fetchGift = async () => {
 			try {
 				// Task 2: Fetch gift details
-				const response = fetch(
+				const response = await fetch(
 					`${urlConfig.backendUrl}/api/gifts/${productId}`
 				);
 				if (!response.ok) {
@@ -106,30 +106,30 @@ function DetailsPage() {
 					{/* Task 6: Display gift details */}
 					<p>
 						<strong>Category:</strong>
-						gift.category
+						{gift.category}
 					</p>
 					<p>
 						<strong>Condition:</strong>
-						gift.condition
+						{gift.condition}
 					</p>
 					<p>
 						<strong>Date Added:</strong>
-						gift.date_added
+						{gift.date_added}
 					</p>
 					<p>
 						<strong>Age (Years):</strong>
-						gift.age_years
+						{gift.age_years}
 					</p>
 					<p>
 						<strong>Description:</strong>
-						gift.description
+						{gift.description}
 					</p>
 				</div>
 			</div>
 			<div className='comments-section mt-4'>
 				<h3 className='mb-3'>Comments</h3>
-				// Task 7: Render comments section by using the map function to
-				go through all the comments
+				{/* Task 7: Render comments section by using the map function to
+				go through all the comments */}
 				{comments.map((comment, index) => (
 					<div key={index} className='card mb-3'>
 						<div className='card-body'>
