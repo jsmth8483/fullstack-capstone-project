@@ -7,7 +7,7 @@ const expressPino = require('express-pino-logger')({ logger });
 const natural = require('natural');
 
 // Task 2: initialize the express server
-const express = express();
+const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
@@ -17,7 +17,7 @@ app.use(expressPino);
 // Task 3: create the POST /sentiment analysis
 app.post('/sentiment', async (req, res) => {
 	// Task 4: extract the sentence parameter
-	const { sentence } = req.query;
+	const { sentence } = req.body;
 
 	if (!sentence) {
 		logger.error('No sentence provided');
