@@ -5,7 +5,13 @@ import { urlConfig } from '../../config';
 
 function SearchPage() {
 	//Task 1: Define state variables for the search query, age range, and search results.
-	const categories = ['Living', 'Bedroom', 'Bathroom', 'Kitchen', 'Office'];
+	const categories = [
+		'Living Room',
+		'Bedroom',
+		'Bathroom',
+		'Kitchen',
+		'Office',
+	];
 	const conditions = ['New', 'Like New', 'Older'];
 	const [searchQuery, setSearchQuery] = useState('');
 	const [ageRange, setAgeRange] = useState(6);
@@ -38,7 +44,7 @@ function SearchPage() {
 		const queryParams = new URLSearchParams({
 			name: searchQuery,
 			age_years: ageRange,
-			category: document.getElementById('categorySelect').ariaValueMax,
+			category: document.getElementById('categorySelect').value,
 			condition: document.getElementById('conditionSelect').value,
 		}).toString();
 
