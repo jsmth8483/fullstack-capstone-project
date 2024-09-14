@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { urlConfig } from '../../config';
 import { useAppContext } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -39,7 +39,7 @@ function LoginPage() {
 		if (json.authtoken) {
 			sessionStorage.setItem('auth-token', json.authtoken);
 			sessionStorage.setItem('name', json.userName);
-			sessionStorate.setItem('email', json.userEmail);
+			sessionStorage.setItem('email', json.userEmail);
 			setIsLoggedIn(true);
 			navigate('/app');
 		} else {

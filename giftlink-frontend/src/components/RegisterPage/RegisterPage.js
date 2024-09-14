@@ -25,7 +25,7 @@ function RegisterPage() {
 						'Content-Type': 'application/json',
 					},
 					body: JSON.stringify({
-						firsName: firstName,
+						firstName: firstName,
 						lastName: lastName,
 						email: email,
 						password: password,
